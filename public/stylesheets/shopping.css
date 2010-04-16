@@ -1,0 +1,128 @@
+
+
+/* resets */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p,  a,  em, font, img, ul, li, fieldset
+{
+	margin: 0; padding: 0; border: 0 solid; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; background-repeat: no-repeat; background-position: center left;
+	border-color: #ddd;
+}
+
+body
+{
+	line-height: 1.5;
+	color: black;
+	background: white;
+	 font-family: Verdana;
+    font-size: small;
+}
+
+ul, ul li
+{
+	list-style: none;
+}
+
+
+
+.descr li
+{
+	list-style-type: disc;
+	margin-left: 1.5em;
+}
+
+
+a
+{
+	color: #143788;
+}
+
+
+p
+{
+	margin: 10px 0;
+}
+
+/* end resets */
+
+.price {
+color:#A52A2A;
+}
+
+.productSeparator
+{
+	border-width: 0;
+	border-bottom-width: 1px;
+	margin: 1px 1px 10px;
+}
+
+ul.productList .pricingInfo {
+
+white-space:nowrap;
+width:10px;
+}
+
+.pricingInfo p.addToCart {
+  background-image:url('../images/button_bg.gif') !important;
+  color:#FFFFFF;
+  font-size:14px;
+  font-weight:bold;
+  left:50;
+  line-height:29px;
+  position:absolute;
+  text-align:center;
+  top:30px;
+  width:125px;
+  cursor: pointer;
+}
+
+ul.productList .spec {
+margin-top:2px;
+}
+ul.productList .descr {
+margin-left:12px;
+}
+ul.productList .image {
+width:110px;
+}
+
+ul.productList li {
+margin-bottom:3px;
+}
+ul.productList .title {
+font-size:120%;
+float:left;
+}
+
+
+
+ul.productList li {
+margin-bottom:30px;
+}
+ul.productList .title {
+font-size:120%;
+}
+
+ul.productList .spec {
+margin-top:2px;
+}
+ul.productList .descr {
+margin-left:120px;
+
+}
+.shortDescr {
+color:#A52A2A;
+margin-top:0.5em;
+
+}
+ul.productList .image {
+width:110px;
+}
+
+
+ul.productList .pricingInfo {
+line-height:1.2em;
+margin-left:1em;
+white-space:nowrap;
+width:250px;
+}
+
+

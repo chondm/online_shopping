@@ -1,0 +1,15 @@
+<p>YOUR SHOPPING CART</p>
+<div class="productSeparator"></div>
+<%if !carts.nil?%>
+    <%orders = carts.orders.keys
+    attributes = {}
+    attributes["href"] = 'javascript:void(0);'
+    attributes["onclick"]= 'show_message()'
+    %>
+    <%orders.each do |id|%>
+        <p><%=carts.orders[id].quantity%> x <%=content_tag :a, Product.find_by_id(id.to_i).name, attributes%></p>
+    <%end%>
+    <div class="productSeparator"></div>
+    <p>Total: $<%= number_with_delimiter(carts.price)%></p>
+    <span><a href="javascript:void(0);" onclick="show_message();"> Check Out</a></span>
+<%end%>

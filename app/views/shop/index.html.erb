@@ -1,0 +1,64 @@
+
+<div class="lm_container">
+
+<div class="lm_center" >
+<p>LIST ITEMS</p>
+<p><%=will_paginate @product_lists%></p>
+<div class="productSeparator"></div>
+<ul class="producList" style="border-right:red dashed 1px;">
+  <% @product_lists.each do |p| %>
+  <li class="feature">  
+    <fieldset style="position:relative;" class="container">
+      <div class="title">
+        <a href="javascript:void(0);" onclick="show_message();"> <%=h p.name %> </a> Byline by <%= p.byline %>
+      </div>
+      <div class="image">
+        <a href="javascript:void(0);" onclick="show_message();"><img  src="../images/no_image.gif"></a>
+      </div>
+      <div class="descr">
+        <div class="pricingInfo">
+              <p id =<%=p.id%> class="addToCart" onclick="add_item(this);">Add to Cart</p>
+        </div>
+        <div class="price">Price: $<%= number_with_delimiter(p.price)%></div>
+        <div class="shortDescr">
+          Description : <%=h p.description%>
+        </div>
+      </div>
+    </fieldset>
+    <div class="productSeparator"></div>
+  </li> 
+  <% end %>
+</ul>
+</div>
+
+<div id = "shopping_cart" class="lm_right" style="width:200px; padding-left:20px">
+<%=render :partial => "shopping_cart", :locals =>{:carts => @shopping_cart}%>
+</div>
+ 
+</div>
+
+<script type="text/javascript">
+var g_url = <%= add_to_cart_path.to_json%>;
+
+// Add item to shopping cart
+  function add_item(el){   
+   var params ={
+    id : el.id,
+    authenticity_token: <%= form_authenticity_token.to_json %>
+      };
+    var ajax = new Ajax.Updater("shopping_cart",g_url,{
+      parameters: params, 
+      method: "post",
+      onSuccess: function(res){
+      },
+      onFailure: function(res){
+      }
+      });
+  }
+
+// show message "Feature Under Construction"
+function show_message(){
+    alert ("Feature Under Construction.");}
+</script>
+
+

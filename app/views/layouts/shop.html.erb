@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+  <title>Online Shopping</title>
+  <%= stylesheet_link_tag "shopping" %>
+  <%= javascript_include_tag "prototype" %>
+  <%= javascript_include_tag "layoutmanager" %>
+  <style type="text/css">
+    /* required stuff */
+    body { overflow:hidden; }
+    body, html { height:100%; margin:0; padding:0; }
+
+    /* stuff for the example */
+    body { font-family:sans-serif; }
+    div { padding-left:5px}
+
+  </style>
+</head>
+
+<body>
+<div class="lm_top" style="background:#CEF1FF; height:50px">
+    Banner
+  </div>  
+  <div class="lm_left" style="background:#ffcc66; width:200px; border:red solid 1px; ">
+   Product lists menu
+  </div>    
+  <div class="lm_center" style="background:#ffffff; overflow:auto">
+    <%=yield%>
+  </div>
+  <div class="lm_bottom" style="background:#E7F4FA; height:30px">
+    amazon.com
+  </div>
+</body></html>
